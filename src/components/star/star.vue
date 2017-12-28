@@ -13,6 +13,7 @@
     props: {
       size: {
         type: Number
+
       },
       score: {
         type: Number
