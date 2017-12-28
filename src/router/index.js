@@ -1,15 +1,26 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Vue from 'vue';
+import Router from 'vue-router';
+import goods from './../components/goods/goods.vue';
+import ratings from './../components/ratings/ratings.vue';
+import seller from './../components/seller/seller.vue';
 
-Vue.use(Router)
+Vue.use(Router);
+
+const routes = [{
+  path: '/',
+  redirect: '/goods'
+}, {
+  path: '/goods',
+  component: goods
+}, {
+  path: '/ratings',
+  component: ratings
+}, {
+  path: '/seller',
+  component: seller
+}];
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
-})
+    linkActiveClass: 'active',
+    routes
+});

@@ -92,14 +92,12 @@
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
     },
     components: {
-//      star
+
     }
   };
 </script>
-
 <style lang="stylus" rel="stylesheet/stylus">
-  @import "../../common/stylus/mixin";
-
+  @import "./../../common/stylus/mixin.styl";
   .header
     position: relative
     overflow: hidden
