@@ -1,23 +1,34 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <v-header :seller="seller"></v-header>
+
   </div>
 </template>
-
 <script>
+import header from  './components/header/header.vue';
+const ERR_NO = 0;
 export default {
-  name: 'app'
+  name: 'app',
+  data () {
+    return {
+      url: './../seller.json',
+      seller: {}
+    }
+  },
+  created () {
+    this.$http.get(this.url).then((response) => {
+        response = response.body;
+        if (response.errno === ERR_NO) {
+          this.seller = Object.assign({}, this.seller, response.data);
+          console.log(response.data);
+        }
+    })
+  },
+  components: {
+    'v-header': header
+  }
 }
 </script>
-
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
