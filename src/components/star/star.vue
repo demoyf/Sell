@@ -9,7 +9,6 @@
   const CLS_ON = 'on';
   const CLS_HALF = 'half';
   const CLS_OFF = 'off';
-
   export default {
     props: {
       size: {
