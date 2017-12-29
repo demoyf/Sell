@@ -3,6 +3,6 @@
  */
 module.exports = {
   getUrl:function () {
-    return "http://localhost:63342/sell/";
+    return "http://106.14.13.178/Sell/";
   }
 };
