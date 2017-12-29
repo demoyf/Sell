@@ -21,10 +21,8 @@
 <script type="text/ecmascript-6">
   import { urlParse } from './common/js/util';
   import header from './components/header/header.vue';
-
+  import myUrl from './common/js/url.js';
   const ERR_OK = 0;
-  const debug = process.env.NODE_ENV !== 'production';
-
   export default {
     data() {
       return {
@@ -34,11 +32,11 @@
             return queryParam.id;
           })()
         },
-        url:"./../../data/seller.json"
+        url:myUrl.getUrl(),
       };
     },
     created() {
-      const  url = this.url;
+      const url = this.url+"data/seller.json";
       this.$http.get(url).then((response) => {
         response = response.body;
         if (response.errno === ERR_OK) {

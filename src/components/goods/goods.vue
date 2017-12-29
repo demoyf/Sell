@@ -51,7 +51,7 @@
   import shopcart from './../shopcart/shopcart.vue';
   import cartcontrol from './../cartcontrol/cartcontrol.vue';
   import food from './../food/food.vue';
-
+  import myUrl from './../../common/js/url.js';
   const ERR_OK = 0;
   const debug = process.env.NODE_ENV !== 'production';
 
@@ -95,7 +95,7 @@
     },
     created() {
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
-      const url = './../../data/goods.json';
+      const url = myUrl.getUrl()+'data/goods.json';
       this.$http.get(url).then((response) => {
         response = response.body;
         if (response.errno === ERR_OK) {

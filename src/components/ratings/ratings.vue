@@ -61,7 +61,7 @@
   import star from './../star/star';
   import ratingselect from './../ratingselect/ratingselect';
   import split from './../split/split';
-
+  import myUrl from './../../common/js/url.js';
   const ALL = 2;
   const ERR_OK = 0;
   const debug = process.env.NODE_ENV !== 'production';
@@ -80,7 +80,7 @@
       };
     },
     created() {
-      const url =  './../../data/ratings.json';
+      const url = myUrl.getUrl()+'data/ratings.json';
       this.$http.get(url).then((response) => {
         response = response.body;
         if (response.errno === ERR_OK) {
