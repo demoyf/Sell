@@ -3,6 +3,6 @@
  */
 module.exports = {
   getUrl:function () {
-    return "http://106.14.13.178/Sell/";
+    return "http://xyf0412.oicp.io/Sell/";
   }
 };
